@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>PGM </string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>C:/Users/STONE/Desktop/pgm.png</normaloff>C:/Users/STONE/Desktop/pgm.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>读取特定文件并打开</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="PaintFrame" name="paintMainWedget" native="true">
+      <layout class="QVBoxLayout" name="verticalLayout"/>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuLogin">
+    <property name="title">
+     <string>登录</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuFiles">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="actOpen"/>
+    <addaction name="actClose"/>
+    <addaction name="actSave"/>
+    <addaction name="actSaveAs"/>
+    <addaction name="actImport"/>
+    <addaction name="actExport"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>编辑</string>
+    </property>
+    <widget class="QMenu" name="menu_4">
+     <property name="title">
+      <string>测量</string>
+     </property>
+     <addaction name="actionLinear"/>
+     <addaction name="actionAngular"/>
+     <addaction name="actionRadial"/>
+    </widget>
+    <widget class="QMenu" name="menu_5">
+     <property name="title">
+      <string>线处理</string>
+     </property>
+     <addaction name="actAddLine"/>
+     <addaction name="actMoveLine"/>
+    </widget>
+    <widget class="QMenu" name="menudotHandle">
+     <property name="title">
+      <string>点处理</string>
+     </property>
+     <addaction name="actAddDots"/>
+     <addaction name="actMoveDots"/>
+    </widget>
+    <addaction name="menudotHandle"/>
+    <addaction name="menu_5"/>
+    <addaction name="separator"/>
+    <addaction name="actCreatePath"/>
+    <addaction name="separator"/>
+    <addaction name="menu_4"/>
+   </widget>
+   <widget class="QMenu" name="menuManage">
+    <property name="title">
+     <string>配置管理</string>
+    </property>
+    <widget class="QMenu" name="menu">
+     <property name="title">
+      <string>裁切选项</string>
+     </property>
+     <addaction name="actionknifeAdd"/>
+     <addaction name="actMeterial"/>
+     <addaction name="actMaxMin"/>
+     <addaction name="actCutOrder"/>
+    </widget>
+    <addaction name="menu"/>
+    <addaction name="actView"/>
+    <addaction name="separator"/>
+    <addaction name="actImoprtSets"/>
+    <addaction name="actSaveSets"/>
+    <addaction name="actionviewSet"/>
+    <addaction name="separator"/>
+    <addaction name="actPreSettingsRecognize"/>
+    <addaction name="actPreSettingsKnifeMng"/>
+    <addaction name="actPreSettingsMeterial"/>
+   </widget>
+   <widget class="QMenu" name="menuOthers">
+    <property name="title">
+     <string>其他</string>
+    </property>
+    <widget class="QMenu" name="menuHistory">
+     <property name="title">
+      <string>历史信息</string>
+     </property>
+     <widget class="QMenu" name="menuMaintain">
+      <property name="title">
+       <string>维护记录</string>
+      </property>
+      <addaction name="actionMaintainSee"/>
+      <addaction name="actionMaintainAdd"/>
+     </widget>
+     <addaction name="actOperating"/>
+     <addaction name="actError"/>
+     <addaction name="menuMaintain"/>
+    </widget>
+    <addaction name="actHelp"/>
+    <addaction name="menuHistory"/>
+   </widget>
+   <widget class="QMenu" name="menuMechine">
+    <property name="title">
+     <string>裁切启动</string>
+    </property>
+    <addaction name="actionOpertion"/>
+    <addaction name="actionset"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menu_6">
+    <property name="title">
+     <string>显示</string>
+    </property>
+    <widget class="QMenu" name="menulanguageSet">
+     <property name="title">
+      <string>languageSet</string>
+     </property>
+     <addaction name="actChinese"/>
+     <addaction name="actEnglish"/>
+     <addaction name="actGerman"/>
+     <addaction name="actItalian"/>
+    </widget>
+    <addaction name="actDisplay"/>
+    <addaction name="actionunit"/>
+    <addaction name="menulanguageSet"/>
+   </widget>
+   <addaction name="menuLogin"/>
+   <addaction name="menuFiles"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuManage"/>
+   <addaction name="menu_6"/>
+   <addaction name="menuMechine"/>
+   <addaction name="menuOthers"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actHelp">
+   <property name="text">
+    <string>使用手册</string>
+   </property>
+  </action>
+  <action name="actChinese">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>中文</string>
+   </property>
+  </action>
+  <action name="actEnglish">
+   <property name="text">
+    <string>英语</string>
+   </property>
+  </action>
+  <action name="actGerman">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>德语</string>
+   </property>
+  </action>
+  <action name="actItalian">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>意大利语</string>
+   </property>
+  </action>
+  <action name="actCutOrder">
+   <property name="text">
+    <string>顺序修改</string>
+   </property>
+  </action>
+  <action name="actPreSettingsKnifeMng">
+   <property name="text">
+    <string>刀具管理预设置</string>
+   </property>
+  </action>
+  <action name="actPreSettingsRecognize">
+   <property name="text">
+    <string>路径识别预设置</string>
+   </property>
+  </action>
+  <action name="actMaxMin">
+   <property name="text">
+    <string>缩放调整</string>
+   </property>
+  </action>
+  <action name="actView">
+   <property name="text">
+    <string>视图选项</string>
+   </property>
+  </action>
+  <action name="actOpen">
+   <property name="text">
+    <string>打开文件</string>
+   </property>
+  </action>
+  <action name="actClose">
+   <property name="text">
+    <string>关闭文件</string>
+   </property>
+  </action>
+  <action name="actSave">
+   <property name="text">
+    <string>保存</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actSaveAs">
+   <property name="text">
+    <string>另存为</string>
+   </property>
+  </action>
+  <action name="actImport">
+   <property name="text">
+    <string>导入刀路文件</string>
+   </property>
+  </action>
+  <action name="actExport">
+   <property name="text">
+    <string>导出刀路文件</string>
+   </property>
+  </action>
+  <action name="actOperating">
+   <property name="text">
+    <string>操作历史</string>
+   </property>
+  </action>
+  <action name="actError">
+   <property name="text">
+    <string>故障历史</string>
+   </property>
+  </action>
+  <action name="actionMaintainSee">
+   <property name="text">
+    <string>查看</string>
+   </property>
+  </action>
+  <action name="actionMaintainAdd">
+   <property name="text">
+    <string>添加</string>
+   </property>
+  </action>
+  <action name="actImoprtSets">
+   <property name="text">
+    <string>配置导入</string>
+   </property>
+  </action>
+  <action name="actSaveSets">
+   <property name="text">
+    <string>配置导出</string>
+   </property>
+  </action>
+  <action name="actMeterial">
+   <property name="text">
+    <string>面料指定</string>
+   </property>
+  </action>
+  <action name="actMoveDots">
+   <property name="text">
+    <string>移动点</string>
+   </property>
+  </action>
+  <action name="actAddDots">
+   <property name="text">
+    <string>添加点</string>
+   </property>
+  </action>
+  <action name="actCreatePath">
+   <property name="text">
+    <string>生成走刀文件</string>
+   </property>
+  </action>
+  <action name="actionOpertion">
+   <property name="text">
+    <string>运行</string>
+   </property>
+  </action>
+  <action name="actionset">
+   <property name="text">
+    <string>设置</string>
+   </property>
+  </action>
+  <action name="actPreSettingsMeterial">
+   <property name="text">
+    <string>面料管理预设置</string>
+   </property>
+  </action>
+  <action name="actDisplay">
+   <property name="text">
+    <string>图形设置</string>
+   </property>
+  </action>
+  <action name="actionunit">
+   <property name="text">
+    <string>单位设置</string>
+   </property>
+  </action>
+  <action name="actionknifeAdd">
+   <property name="text">
+    <string>刀具装填</string>
+   </property>
+  </action>
+  <action name="actionviewSet">
+   <property name="text">
+    <string>配置浏览</string>
+   </property>
+  </action>
+  <action name="actionLinear">
+   <property name="text">
+    <string>直线测量</string>
+   </property>
+  </action>
+  <action name="actionAngular">
+   <property name="text">
+    <string>角度测量</string>
+   </property>
+  </action>
+  <action name="actionRadial">
+   <property name="text">
+    <string>半径测量</string>
+   </property>
+  </action>
+  <action name="actAddLine">
+   <property name="text">
+    <string>添加线</string>
+   </property>
+  </action>
+  <action name="actMoveLine">
+   <property name="text">
+    <string>移动线</string>
+   </property>
+  </action>
+  <action name="actionds">
+   <property name="text">
+    <string>ds</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>PaintFrame</class>
+   <extends>QWidget</extends>
+   <header>paintframe.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
